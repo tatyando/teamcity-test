@@ -29,7 +29,7 @@ public class BuildTypeTest extends BaseApiTest {
 
         userCheckRequests.getRequest(Endpoint.BUILD_TYPES).create(testData.getBuildType());
 
-        var createdBuildType = userCheckRequests.<BuildType>getRequest(Endpoint.BUILD_TYPES).read(testData.getBuildType().getId());
+        var createdBuildType = userCheckRequests.<BuildType>getRequest(Endpoint.BUILD_TYPES).read("id:" + testData.getBuildType().getId());
 
         softy.assertEquals(testData.getBuildType().getName(), createdBuildType.getName(), "Build type is not correct");
 
@@ -63,7 +63,7 @@ public class BuildTypeTest extends BaseApiTest {
 
         var userCheckedRequest = new CheckedRequests(Specifications.authSpec(testData.getUser()));
         userCheckedRequest.getRequest(Endpoint.BUILD_TYPES).create(testData.getBuildType());
-        var createdBuildType = userCheckedRequest.<BuildType>getRequest(Endpoint.BUILD_TYPES).read(testData.getBuildType().getId());
+        var createdBuildType = userCheckedRequest.<BuildType>getRequest(Endpoint.BUILD_TYPES).read("id:" + testData.getBuildType().getId());
 
         softy.assertEquals(testData.getBuildType().getName(), createdBuildType.getName(), "Build type name is not correct");
     }

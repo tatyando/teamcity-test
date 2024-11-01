@@ -19,6 +19,7 @@ dependencies {
     compileOnly("io.rest-assured:rest-assured:5.5.0")
     testAnnotationProcessor("org.projectlombok:lombok:1.18.34")
     compileOnly("org.projectlombok:lombok:1.18.34")
+    testCompileOnly("org.projectlombok:lombok:1.18.34")
     annotationProcessor("org.projectlombok:lombok:1.18.34")
     testImplementation("org.testng:testng:7.8.0")
     testImplementation("io.qameta.allure:allure-testng:2.20.1")
@@ -27,9 +28,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.2.1")
     implementation("jakarta.xml.bind:jakarta.xml.bind-api:3.0.1")
     implementation("org.glassfish.jaxb:jaxb-runtime:3.0.1")
-
-
-
+    testImplementation("com.codeborne:selenide:7.5.0")
 }
 
 tasks.test {

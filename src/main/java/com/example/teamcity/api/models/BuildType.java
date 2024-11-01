@@ -24,5 +24,5 @@ public class BuildType extends BaseModel {
     private Project project;
     @Optional
     private Steps steps;
-
+    private Integer count;
 }
